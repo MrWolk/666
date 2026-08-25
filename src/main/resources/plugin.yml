@@ -1,0 +1,16 @@
+name: ALLINMiner
+version: 1.0.1
+main: com.allin.miner.AllinMiner
+api-version: '26.2'
+author: ALLIN
+description: Special mining points and Miner skill for ALLIN
+
+commands:
+  miner:
+    description: ALLIN Miner administration
+    usage: /miner <add|remove|list|respawn|stats|reload>
+    permission: allinminer.admin
+
+permissions:
+  allinminer.admin:
+    default: op
