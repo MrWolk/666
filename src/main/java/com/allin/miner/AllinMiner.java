@@ -155,7 +155,14 @@ public class AllinMiner extends JavaPlugin implements Listener, CommandExecutor,
         },0,5);
         mining.put(p.getUniqueId(),task);
     }
-    private String bar(double x){int n=20,k=(int)Math.round(x*n);return "§a"+"▰".repeat(Math.max(0,k))+"§7"+"▰".repeat(Math.max(0,n-k));}
+    private String bar(double x){
+        int n = 14;
+        int k = (int)Math.round(Math.max(0.0, Math.min(1.0, x)) * n);
+        int percent = (int)Math.round(Math.max(0.0, Math.min(1.0, x)) * 100.0);
+        return "§e§l⛏ §a§l" + "█".repeat(Math.max(0, k))
+                + "§8" + "█".repeat(Math.max(0, n-k))
+                + " §f§l" + percent + "%";
+    }
     private void stop(Player p){BukkitTask t=mining.remove(p.getUniqueId());if(t!=null)t.cancel();}
     private void finish(Player p, Block b){
         Material m=b.getType();
