@@ -1,62 +1,47 @@
-# ALLIN Miner 1.1.0
-mining:
-  base-seconds: 10.0
-  min-seconds: 1.0
-  level-seconds-reduction: 1.0
-  efficiency-seconds-reduction: 0.75
-  no-pickaxe-penalty: 3.0
+# ALLINProcessor 1.0.0
+# Переработка блоков руды через кафедру (LECTERN).
 
-# Базовая награда для обычной добычи.
-# Начиная со 2 уровня Шахтёра к максимальному количеству добавляется +1 за каждый уровень.
-# Алмазная руда и древние обломки всегда дают строго 1 блок.
-reward:
-  min: 1
-  max: 3
+processing:
+  seconds: 5
+  cancel-if-too-far: true
+  max-distance: 4.0
 
-# Шанс неудачной добычи после окончания таймера.
-# При каждой завершённой попытке кирка теряет 1 прочность с учётом Unbreaking.
-failure-chances:
-  wooden: 0.50
-  stone: 0.40
-  iron: 0.30
-  golden: 0.25
-  diamond: 0.10
-  netherite: 0.05
-  no-pickaxe: 0.60
+levels:
+  # Уровень 1 -> 2: после 2000 успешных переработок счётчик сбрасывается.
+  level-2-required: 2000
 
-# Fortune: шанс получить ещё +1 к награде обычной добычи.
-fortune:
-  chances:
-    1: 0.10
-    2: 0.20
-    3: 0.30
+  # Уровень 2 -> 3: после 6000 успешных переработок счётчик сбрасывается.
+  level-3-required: 6000
 
-# Бонус 5 уровня: дополнительный алмаз при успешной обычной добыче.
-# Silk Touch этот бонус не получает.
-level-5:
-  extra-diamond-chance: 0.05
+  # 3 уровень максимальный. Счётчик дальше идёт бесконечно.
+  level-3-diamond-chance: 0.01
 
-point:
-  keep-current-block: false
+# Что получается из одного блока руды.
+# Можно менять без пересборки JAR.
+recipes:
+  COAL_ORE: COAL
+  DEEPSLATE_COAL_ORE: COAL
 
-# Сумма шансов = 1.0 (100%).
-# Алмаз и древние обломки намеренно самые редкие.
-ores:
-  - material: COAL_ORE
-    chance: 0.30
-  - material: COPPER_ORE
-    chance: 0.20
-  - material: IRON_ORE
-    chance: 0.20
-  - material: GOLD_ORE
-    chance: 0.10
-  - material: LAPIS_ORE
-    chance: 0.07
-  - material: REDSTONE_ORE
-    chance: 0.06
-  - material: EMERALD_ORE
-    chance: 0.055
-  - material: DIAMOND_ORE
-    chance: 0.01
-  - material: ANCIENT_DEBRIS
-    chance: 0.005
+  COPPER_ORE: RAW_COPPER
+  DEEPSLATE_COPPER_ORE: RAW_COPPER
+
+  IRON_ORE: RAW_IRON
+  DEEPSLATE_IRON_ORE: RAW_IRON
+
+  GOLD_ORE: RAW_GOLD
+  DEEPSLATE_GOLD_ORE: RAW_GOLD
+  NETHER_GOLD_ORE: GOLD_NUGGET
+
+  REDSTONE_ORE: REDSTONE
+  DEEPSLATE_REDSTONE_ORE: REDSTONE
+
+  LAPIS_ORE: LAPIS_LAZULI
+  DEEPSLATE_LAPIS_ORE: LAPIS_LAZULI
+
+  EMERALD_ORE: EMERALD
+  DEEPSLATE_EMERALD_ORE: EMERALD
+
+  DIAMOND_ORE: DIAMOND
+  DEEPSLATE_DIAMOND_ORE: DIAMOND
+
+  ANCIENT_DEBRIS: NETHERITE_SCRAP

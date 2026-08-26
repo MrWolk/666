@@ -1,14 +1,16 @@
-name: ALLINMiner
-version: 1.1.2
-main: com.allin.miner.AllinMiner
+name: ALLINProcessor
+version: 1.0.0
+main: com.allin.processor.AllinProcessor
 api-version: '26.2'
 author: ALLIN
-description: Special mining points and Miner skill for ALLIN
+description: Ore processing system for ALLIN
+
 commands:
-  miner:
-    description: ALLIN Miner administration
-    usage: /miner
-    permission: allinminer.admin
+  processor:
+    description: Processor stats and administration
+    usage: /processor
+    aliases: [proc]
+
 permissions:
-  allinminer.admin:
+  allinprocessor.admin:
     default: op

@@ -1,18 +1,17 @@
-# ALLINMiner
+# ALLINProcessor 1.0.0
 
-Minecraft/Paper 26.2 mining plugin project.
+Processor plugin for Paper 26.2.
 
-## Build
-GitHub Actions automatically builds the JAR with Java 25.
+## Gameplay
+Right-click a lectern while holding a supported ore block.
 
-After the workflow finishes:
-Actions -> Build ALLINMiner -> Artifacts -> ALLINMiner
+- Level 1: 1-3 output, 2000 successful processing actions to level 2.
+- Level 2: 2-3 output, 6000 successful processing actions to level 3.
+- Level 3: exactly 3 output, maximum level, infinite counter, 1% bonus diamond chance.
 
-## Local config
-The generated plugin will create:
-plugins/ALLINMiner/config.yml
-plugins/ALLINMiner/points.yml
-plugins/ALLINMiner/players.yml
+Processing time: 5 seconds by default.
 
-Admin permission:
-allinminer.admin
+## Commands
+- /processor stats
+- /processor stats <player>
+- /processor reload
