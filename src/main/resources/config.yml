@@ -1,4 +1,4 @@
-# ALLIN Miner 1.0.0
+# ALLIN Miner 1.1.0
 mining:
   base-seconds: 10.0
   min-seconds: 1.0
@@ -6,31 +6,57 @@ mining:
   efficiency-seconds-reduction: 0.75
   no-pickaxe-penalty: 3.0
 
+# Базовая награда для обычной добычи.
+# Начиная со 2 уровня Шахтёра к максимальному количеству добавляется +1 за каждый уровень.
+# Алмазная руда и древние обломки всегда дают строго 1 блок.
 reward:
   min: 1
   max: 3
 
+# Шанс неудачной добычи после окончания таймера.
+# При каждой завершённой попытке кирка теряет 1 прочность с учётом Unbreaking.
+failure-chances:
+  wooden: 0.50
+  stone: 0.40
+  iron: 0.30
+  golden: 0.25
+  diamond: 0.10
+  netherite: 0.05
+  no-pickaxe: 0.60
+
+# Fortune: шанс получить ещё +1 к награде обычной добычи.
+fortune:
+  chances:
+    1: 0.10
+    2: 0.20
+    3: 0.30
+
+# Бонус 5 уровня: дополнительный алмаз при успешной обычной добыче.
+# Silk Touch этот бонус не получает.
+level-5:
+  extra-diamond-chance: 0.05
+
 point:
   keep-current-block: false
 
-# Сумма шансов должна быть 1.0 (100%).
-# Чем дороже руда, тем меньше шанс.
+# Сумма шансов = 1.0 (100%).
+# Алмаз и древние обломки намеренно самые редкие.
 ores:
   - material: COAL_ORE
-    chance: 0.35
+    chance: 0.30
   - material: COPPER_ORE
     chance: 0.20
   - material: IRON_ORE
-    chance: 0.15
+    chance: 0.20
   - material: GOLD_ORE
     chance: 0.10
-  - material: REDSTONE_ORE
-    chance: 0.07
   - material: LAPIS_ORE
-    chance: 0.05
+    chance: 0.07
+  - material: REDSTONE_ORE
+    chance: 0.06
   - material: EMERALD_ORE
-    chance: 0.04
+    chance: 0.055
   - material: DIAMOND_ORE
-    chance: 0.03
-  - material: ANCIENT_DEBRIS
     chance: 0.01
+  - material: ANCIENT_DEBRIS
+    chance: 0.005

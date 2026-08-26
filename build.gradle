@@ -3,20 +3,16 @@ plugins {
 }
 
 group = 'com.allin'
-version = '1.0.1'
+version = '1.0.0'
 
 repositories {
     maven { url = 'https://repo.papermc.io/repository/maven-public/' }
 }
 
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:26.2.build.84-stable'
+    compileOnly 'io.papermc.paper:paper-api:26.2.build.+'
 }
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(25)
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
 }
