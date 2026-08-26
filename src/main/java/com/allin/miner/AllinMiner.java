@@ -199,7 +199,7 @@ public class AllinMiner extends JavaPlugin implements Listener, CommandExecutor,
         // Progress is awarded only for a successful non-Silk-Touch block extraction.
         if (!silk) {
             s.progress++;
-            int[] req={0,1000,2000,3000,5000};
+            int[] req={0,1000,3000,5000,7000};
             if(lvl<5 && s.progress>=req[lvl]){
                 s.level++; s.progress=0;
                 p.sendMessage("§6§lШАХТЁР §eУровень повышен: §f"+s.level+"§e!");
